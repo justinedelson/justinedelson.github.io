@@ -1,0 +1,72 @@
+---
+layout: page
+title: Interactive Video Demo
+---
+
+<style type="text/css">
+    #s7interactivevideo_div.videoViewer{
+         width:100%; 
+         height:auto;
+    }
+</style>
+<script type="text/javascript">
+    function loadQuickView(sku) {
+        alert(sku);
+    }
+    function onUserEvent(event) {
+        var trackLink = false,
+            eventData = {};
+        if (event.s7event.data.length > 0 &&
+            typeof event.s7event.data[0] === "string") {
+                eventData.link = event.s7event.data[0];
+                eventData.linkType = "hyperlink";
+
+            if (eventData.link.indexOf("quickview") === 0) {
+                eventData.linkType = "quickview";
+                eventData.link = eventData.link.substring(10); // strip off 'quickview:'
+            }
+            if (event.s7event.trackEvent === s7sdk.event.UserEvent.INTERACTIVE_SWATCH) {
+                eventData.location = "sidebar";
+                trackEvent = true;
+            } else if (event.s7event.trackEvent === s7sdk.event.UserEvent.INTERACTIVE_THUMBNAIL_GRID_VIEW_SWATCH) {
+                eventData.location = "cta";
+                trackEvent = true;
+            }
+            if (trackEvent && _satellite) {
+                digitalData.event = eventData;
+                _satellite.track("video-click");            
+            }
+        }
+
+    }
+</script>
+<script type="text/javascript" src="http://justinedelson.assetsadobe.com/etc/dam/viewers/s7viewers/html5/js/InteractiveVideoViewer.js"></script>
+<div id="s7interactivevideo_div"></div>
+<script type="text/javascript">
+    var videoViewer = new s7viewers.InteractiveVideoViewer({
+        "containerId" : "s7interactivevideo_div",
+        "params" : { 
+            "serverurl" : "http://justinedelson.assetsadobe.com/is/image",
+            "contenturl" : "http://justinedelson.assetsadobe.com/", 
+            "config" : "/etc/dam/presets/viewer/Shoppable_Video_light",
+            "videoserverurl": "https://gateway-na.assetsadobe.com/DMGateway/public/justinedelson",
+            "interactivedata": "is/content/content/dam/mac/justinedelson/_VTT/interactive-demo/Glacier.mp4.svideo.vtt",
+            "asset" : "/content/dam/mac/justinedelson/interactive-demo/Glacier.mp4" }
+    })
+     videoViewer.setHandlers({ 
+        "quickViewActivate": function(inData) {
+            var sku=inData.sku; //SKU for product ID
+            //To pass other parameter from the hotspot, you will need to add custom parameter during the hotspot setup as parameterName=value
+            loadQuickView(sku); //Replace this call with your quickview plugin
+            //Please refer to your quickviewer plugin for the quickview call
+         }, 
+         "initComplete":function() { 
+             var interactiveSwatches = videoViewer.getComponent("interactiveSwatches"),
+                 callToAction = videoViewer.getComponent("interactiveThumbnailGridView"); 
+
+             interactiveSwatches.addEventListener(s7sdk.event.UserEvent.NOTF_USER_EVENT, onUserEvent, false);
+             callToAction.addEventListener(s7sdk.event.UserEvent.NOTF_USER_EVENT, onUserEvent, false);
+         }
+     });
+    videoViewer.init();
+</script>

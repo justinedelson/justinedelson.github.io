@@ -21,6 +21,9 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
+redcarpet:
+  extensions: [ 'footnotes' ]
+
 url: "http://blog.justinedelson.com" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
