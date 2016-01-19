@@ -94,4 +94,4 @@ Once all of the pieces are in place, clicking on any of the images in the sideba
 With a little bit of JavaScript additions, we can add click tracking to AEM's Interactive Video viewers so that we know how many users are clicking on which of the links in our viewers.
 
 [^1]: Depending on the size on the player and the number of links associated with the current segment, links associated with other segments may also be displayed.
-[^2]: While a DTM Event Based Rule could be fired based on the user's click, the link data is not easily accessible, so a Direct Call Rule is more effective.
+[^2]: While a DTM Event Based Rule could be fired based on the click, the link data is not easily accessible, so a Direct Call Rule is more effective.
