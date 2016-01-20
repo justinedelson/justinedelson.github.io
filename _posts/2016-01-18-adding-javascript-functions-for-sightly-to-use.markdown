@@ -76,7 +76,7 @@ There are two ways to use this feature -- an easy way and a less easy way. The e
 @Property(name = "javax.script.name", value = "any")
 public class JavaVersionBVP extends HashMap<String, Object> {
 
-    public public JavaVersionBVP() {
+    public JavaVersionBVP() {
         put("javaVersion", System.getProperty("java.runtime.version"));
     }
 }
