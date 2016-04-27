@@ -3,6 +3,7 @@ layout: post
 title:  ACS AEM Commons 2.4.2 and 3.0.2 Released
 date:   2016-04-27
 image: /assets/article_images/2015-08-26-acs-aem-commons-2-released/logo.png
+bodyClass: black-title
 ---
 
 I'm pleased to announce the release of ACS AEM Commons 2.4.2 and 3.0.2.
