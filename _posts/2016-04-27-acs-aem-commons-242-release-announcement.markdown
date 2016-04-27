@@ -8,7 +8,9 @@ bodyClass: black-title
 
 I'm pleased to announce the release of ACS AEM Commons 2.4.2 and 3.0.2.
 
-This is a significant release in this project's history as we are now doing dual releases for compatibility between AEM 6.0, 6.1, and 6.2. As described in [this blog post](/2016/04/27/recompile-code-for-aem62.html){:target="_blank"}, there are a variety of non-backwards compatible changes in Java packages between AEM 6.1 and 6.2 which requires that many projects, including ACS AEM Commons be recompiled. If you are using 6.0 or 6.1, you will need to use versions in the 2.x line, 2.4.2 in this case. If you are using 6.2, you need to use versions in the 3.x line, 3.0.4 in this case.
+This is a significant release in this project's history as we are now doing dual releases for compatibility between AEM 6.0, 6.1, and 6.2. As described in [this blog post](/2016/04/27/recompile-code-for-aem62.html){:target="_blank"}, there are a variety of non-backwards compatible changes in Java packages between AEM 6.1 and 6.2 which requires that many projects, including ACS AEM Commons be recompiled.
+
+> If you are using 6.0 or 6.1, you will need to use versions in the 2.x line, 2.4.2 in this case. If you are using 6.2, you need to use versions in the 3.x line, 3.0.4 in this case.
 
 We expect to maintain this dual version release process for a while, based on user feedback.
 
