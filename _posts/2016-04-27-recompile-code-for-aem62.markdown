@@ -43,7 +43,7 @@ Assuming you need to recompile, the first thing you need to do is update your pr
 * An obfuscated version which is freely available on [repo.adobe.com](http://repo.adobe.com){:target="_blank"}.
 * An unobfuscated version which can only be obtained by licensed customers and partners through Adobe Support (Daycare).
 
-There are a variety of cases when you *need* the unobfuscated version -- certain types of unit tests, certain Declarative Services use cases, etc. These are laid out in the documentation. It is worth noting that these use cases **haven't changed between AEM 6.1 and AEM 6.2**. In other words, if you were using the obfuscated version before, you can continue to use the obfuscated version. And if you needed the unobfuscated version, you still need it.
+There are a variety of cases when you *need* the unobfuscated version -- certain types of unit tests, certain Declarative Services use cases, etc. These are laid out in the [documentation](http://adobe.ly/1SKsJnB){:target="_blank"}. It is worth noting that these use cases **haven't changed between AEM 6.1 and AEM 6.2**. In other words, if you were using the obfuscated version before, you can continue to use the obfuscated version. And if you needed the unobfuscated version, you still need it.
 
 To use the 6.2 UberJar, update the dependency in your project's _pom.xml_ file to:
 
